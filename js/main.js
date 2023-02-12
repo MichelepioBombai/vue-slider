@@ -34,11 +34,19 @@ const app = Vue.createApp({
 
   methods: {
     prevImage() {
-      this.movie.activeImage--;
+      if (this.movie.activeImage - 1 < 0) {
+        this.movie.activeImage = this.movie.images.length - 1;
+      } else {
+        this.movie.activeImage--;
+      }
     },
 
     nextImage() {
-      this.movie.activeImage++;
+      if (this.movie.activeImage + 1 >= this.movie.images.length) {
+        this.movie.activeImage = 0;
+      } else {
+        this.movie.activeImage++;
+      }
     },
   },
 
