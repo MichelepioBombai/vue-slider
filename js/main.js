@@ -54,7 +54,11 @@ const app = Vue.createApp({
     },
   },
 
-  created() {},
+  created() {
+    setInterval(() => {
+      this.nextImage();
+    }, 3000);
+  },
 
   mounted() {},
 });
