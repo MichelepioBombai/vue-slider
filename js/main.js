@@ -48,6 +48,10 @@ const app = Vue.createApp({
         this.movie.activeImage++;
       }
     },
+
+    switchtoImage(index) {
+      this.movie.activeImage = index;
+    },
   },
 
   created() {},

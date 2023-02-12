@@ -77,28 +77,28 @@
             </div>
           </div>
           <div class="slide">
-            <img :src="movie.images[1]" />
+            <img :src="movie.images[movie.activeImage]" />
             <div class="slide-text">
               <h2>{{movie.title2}}</h2>
               <p>{{movie.description2}}</p>
             </div>
           </div>
           <div class="slide">
-            <img :src="movie.images[2]" />
+            <img :src="movie.images[movie.activeImage]" />
             <div class="slide-text">
               <h2>{{movie.title3}}</h2>
               <p>{{movie.description3}}</p>
             </div>
           </div>
           <div class="slide">
-            <img :src="movie.images[3]" />
+            <img :src="movie.images[movie.activeImage]" />
             <div class="slide-text">
               <h2>{{movie.title4}}</h2>
               <p>{{movie.description4}}</p>
             </div>
           </div>
           <div class="slide">
-            <img :src="movie.images[4]" />
+            <img :src="movie.images[movie.activeImage]" />
             <div class="slide-text">
               <h2>{{movie.title5}}</h2>
               <p>{{movie.description5}}</p>
@@ -113,8 +113,9 @@
           <div class="col thumb">
             <img
               :src="image"
-              v-for="(image, index) in movie.images"
+              v-for="(image, imageIndex) in movie.images"
               :class="(index == movie.activeImage) ? 'active' : ''"
+              @click="switchtoImage(imageIndex)"
               alt=""
             />
           </div>
